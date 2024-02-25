@@ -1,10 +1,6 @@
-const { getUniTVL } = require('../helper/unknownTokens');
+const { uniV3Export } = require('../helper/uniswapV3')
+const factory = '0xaD079548b3501C5F218c638A02aB18187F62b207'
 
-module.exports = {
-    tvl: getUniTVL({
-        factory: '0x1998E4b0F1F922367d8Ec20600ea2b86df55f34E',
-        useDefaultCoreAssets: true,
-    })
-}
-
-
+module.exports = uniV3Export({
+    fuse: { factory, fromBlock: 27175571 }
+})
