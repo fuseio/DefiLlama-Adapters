@@ -10,7 +10,7 @@ const VOLT_VOTE_ESCROW = "0xB0a05314Bd77808269e2E1E3D280Bff57Ba85672".toLowerCas
 module.exports = {
   misrepresentedTokens: true,
   fuse: {
-    tvl: sdk.util.sumChainTvls([swap.tvl, olalending.tvl]),
+    ...swap['fuse'],
     staking: stakings([VOLT_BAR, VOLT_VOTE_ESCROW], VOLT_TOKEN),
   },
   hallmarks: [
